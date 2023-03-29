@@ -1,8 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import PropTypes from "prop-types";
+
 import './App.css'
 import PokemonCard from './components/PokemonCard'
+
+pokemonList.propTypes = {
+  imgSrc: PropTypes.string,
+  name: PropTypes.string.isRequired,
+}
 
 const pokemonList = [
   {
