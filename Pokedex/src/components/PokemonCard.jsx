@@ -1,6 +1,5 @@
 function PokemonCard(props){
     // console.log(props)
-    
     return (
         <figure className="card">
             {props.imgSrc? <img src={props.imgSrc} alt="pokemon" className="card-img"/> : <p>????</p>}
@@ -9,8 +8,4 @@ function PokemonCard(props){
     )
     
 }
-
-
-
-
 export default PokemonCard;
