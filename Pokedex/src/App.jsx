@@ -9,10 +9,10 @@ const pokemonList = [
       {
       name: "famille",
       imgSrc: "https://www.stickees.com/files/cartoon/the-simpsons/2253-the-simpsons-01-sticker.png",
-      }
+      },
       {
       name: "bart",
-      imgSrc: https:"//www.stickees.com/files/cartoon/the-simpsons/2243-bart-simpson-greeting.png",
+      imgSrc: "https://www.stickees.com/files/cartoon/the-simpsons/2243-bart-simpson-greeting.png",
       },
       {
       name: "bulbasaur",
@@ -32,7 +32,6 @@ const pokemonList = [
       },
       {
       name: "mew",
-    
       },
       {
       name: "froufrou",
@@ -47,32 +46,23 @@ pokemonList.propTypes={
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(1)
   
-  const hangleclickPlus = (event) => {
-    console.log(event.target);
-    pokemonList.forEach(element => {
+  function hangleclickPlus() {
         setCount(count + 1);
-      }      
-    ); 
-    console.log(count);
-  }
-  const hangleclickMoins = (event) => {
-    console.log(event.target);
-    pokemonList.forEach(element => {
-      setCount(count -1);
-    }); 
-    console.log(count);
-  }
+        // console.log(count);
+  };
+  function hangleclickMoins() {
+        setCount(count -1);
+        // console.log(count);
+  };
   return (
     <div>
-      <button onClick={hangleclickMoins}>----</button>
-      <button onClick={hangleclickPlus}>++++</button>
+      {count > 0 ? <button onClick={hangleclickMoins}>previous</button> : null}
+      {count < pokemonList.length ? <button onClick={hangleclickPlus}>next</button> : null}
       <PokemonCard {...pokemonList[count]}/>
     </div>
   )
 }
 
-
-
-export default App
+export default App;
