@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react"
 import './App.css'
-import PokemonCard from './components/PokemonCard'
+import Navbar from "./components/navbar"
 
 
 
@@ -49,21 +49,8 @@ function App() {
   useEffect(() => {
     console.log("hello pokemon trainer :)");
   },[])
-  const [count, setCount] = useState(1)
-  
-  function hangleclickPlus() {
-        setCount(count + 1);
-       
-  };
-  function hangleclickMoins() {
-        setCount(count -1);
-  };   
   return (
-    <div>
-      {count > 0 ? <button onClick={hangleclickMoins}>previous</button> : null}
-      {count < pokemonList.length ? <button onClick={hangleclickPlus}>next</button> : null}
-      <PokemonCard {...pokemonList[count]}/>
-    </div>
+  <Navbar props = {pokemonList}/>
   )
 }
 
