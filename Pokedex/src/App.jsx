@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import './App.css'
 import PokemonCard from './components/PokemonCard'
 
@@ -46,16 +46,18 @@ pokemonList.propTypes={
 
 
 function App() {
+  useEffect(() => {
+    console.log("hello pokemon trainer :)");
+  },[])
   const [count, setCount] = useState(1)
   
   function hangleclickPlus() {
         setCount(count + 1);
-        // console.log(count);
+       
   };
   function hangleclickMoins() {
         setCount(count -1);
-        // console.log(count);
-  };
+  };   
   return (
     <div>
       {count > 0 ? <button onClick={hangleclickMoins}>previous</button> : null}
